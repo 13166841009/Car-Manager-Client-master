@@ -3,6 +3,9 @@ package com.ant_team.car_manager_client_master.base;
 import android.app.Application;
 import android.content.Context;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
 /**
  * 在启动这个应用程序时，首先运行在AndroidManifest中注册的Application,也就是”name“的值代表的Application。
  * 在初始运行这个应用时我们需要先加载一些数据或其他，做一些初始化的操作，这时，我们就需要在BaseApplication中定义。
@@ -10,7 +13,20 @@ import android.content.Context;
  */
 public class BaseApplication extends Application{
 
+    private String userinfoId;
+    private String loginname;
+    private String loginpwd;
+    private String carbrand;
+
+    private String type;
+    private String busnumber;
+    private String framenumber;
+    private String enginenumber;
+    private String mileage;
+
     private static String mLock = "LOCK";
+
+    private static RequestQueue requestQueue;
     /**
      * 单例模式中获取唯一的MyApplication实例
      */
@@ -32,5 +48,17 @@ public class BaseApplication extends Application{
         /**
          * 做一些初始化的处理：初始化数据库，化图片缓存，初始化地图等。
          */
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        initImageLoader();
+    }
+
+    private void initImageLoader() {
+
+    }
+
+
+    public static RequestQueue getRequestQueue() {
+        return requestQueue;
     }
 }
