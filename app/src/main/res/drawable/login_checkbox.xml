@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 选中时，显示login_004 ，未选中时，显示login_003-->
+
+    <item android:drawable="@drawable/login_003" android:state_checked="false"></item>
+    <item android:drawable="@drawable/login_004" android:state_checked="true"></item>
+
+</selector>

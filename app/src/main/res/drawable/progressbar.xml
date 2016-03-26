@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 登录时，进度条旋转50% -->
+<animated-rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/login_loading"
+    android:pivotX="50%"
+    android:pivotY="50%" />
